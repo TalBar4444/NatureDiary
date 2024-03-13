@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ScreenBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        style="@style/ScreenBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            app:expandedTitleMarginEnd="16dp"
+            app:expandedTitleMarginStart="16dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleCollapseMode="scale"
+            style="@style/ToolbarBackground">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/main_LBL_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Settings"
+                android:textSize="32sp"
+                app:layout_collapseMode="pin"
+                app:titleEnabled="true"
+                style="@style/PrimaryTitleColor"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="100dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/CardBackground">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="17sp"
+                    android:text="   Share\n   share with your friend!"
+                    android:drawableStart="@drawable/ic_share"
+                    style="@style/SettingsText"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/CardBackground">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="17sp"
+                    android:text="   About Us"
+                    android:drawableStart="@drawable/ic_info"
+                    style="@style/SettingsText"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/CardBackground">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="17sp"
+                    android:text="Display Mode"
+                    style="@style/SettingsText"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/settings_SWCH_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="end|center"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/CardBackground">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="17sp"
+                    android:text="   Logout"
+                    android:drawableStart="@drawable/ic_logout"
+                    style="@style/SettingsText"/>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        layout="@layout/bottom_nav" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

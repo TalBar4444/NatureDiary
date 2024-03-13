@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#8BC34A</color>
+    <color name="primaryLight">#978BC34A</color>
+    <color name="primaryMedium">#58754E</color>
+    <color name="primaryDark">#1E4912</color>
+    <color name="unPressedIcon">#838383</color>
+    <color name="pressedIcon">#570A5C</color>
+    <color name="LightBluePastel">#7DA8FF</color>
+    <color name="lightestBlue">#DCE8FE</color>
+    <color name="LightGray">#DDDDE1</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="bottomNav">#FDF6FE</color>
+
+    <color name="gray">#838383</color>
+    <color name="mediumGray">#6A515A51</color>
+    <color name="darkGray">#ff424242</color>
+    <color name="darkestGray">#252525</color>
+    <color name="almostBlackGray">#1E1E1E</color>
+    <color name="lavender">#8692f7</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    <color name="highlightColor">#131313</color>-->
+<!--    <color name="background">#FFFFF0</color>-->
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+<!--    <color name="gray">#838383</color>-->
+
+
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNav_LL_bottomBar"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    style="@style/BottomBar">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bottom_NAV_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/transparent"
+        app:icon="@drawable/ic_gallery"
+        app:iconTint="@drawable/bottom_nav_item_color"
+        app:iconPadding="0dp"
+        app:iconTintMode="src_in"
+        app:iconGravity="textTop"
+        app:iconSize="25sp"
+        android:text="Gallery"
+        android:textColor="@drawable/bottom_nav_item_color"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bottom_NAV_plants"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/transparent"
+        app:icon="@drawable/ic_plant"
+        app:iconTint="@drawable/bottom_nav_item_color"
+        app:iconPadding="0dp"
+        app:iconTintMode="src_in"
+        app:iconGravity="textTop"
+        app:iconSize="25sp"
+        android:text="Plants"
+        android:textColor="@drawable/bottom_nav_item_color"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bottom_NAV_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/transparent"
+        app:icon="@drawable/ic_settings"
+        app:iconTint="@drawable/bottom_nav_item_color"
+        app:iconPadding="0dp"
+        app:iconTintMode="src_in"
+        app:iconGravity="textTop"
+        app:iconSize="25sp"
+        android:text="Settings"
+        android:textColor="@drawable/bottom_nav_item_color"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

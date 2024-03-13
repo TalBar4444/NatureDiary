@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/ScreenBackground"
+    tools:context="activities.PlantActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/plant_LL_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/ToolbarBackground">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plant_LBL_back"
+            style="@style/ToolbarTextAndIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_back"
+            android:gravity="center"
+            android:paddingVertical="18dp"
+            android:paddingStart="20dp"
+            android:text="Back"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plant_LBL_edit"
+            style="@style/ToolbarTextAndIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/ic_edit"
+            android:gravity="center"
+            android:padding="20dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/plant_LL_topBar"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/plant_Scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/plant_IMG_plantImage"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/noplantimagebackground"
+                        app:civ_border_color="@color/gray"
+                        app:civ_border_width="1.5dp" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/plant_LBL_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="Hello plant"
+                        style="@style/PrimaryTextColor"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/plant_LBL_lastUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last update: "
+                        android:paddingVertical="10dp"
+                        android:textSize="20sp"
+                        style="@style/PrimaryTextColor"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        style="@style/DividerBackground"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="5dp" >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Status"
+                            style="@style/PrimaryTextColor"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="20dp"
+                            style="@style/CardBackground">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/plant_EDT_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:paddingTop="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:autoSizeTextType="uniform"
+                                android:paddingBottom="10dp"
+                                style="@style/PrimaryTextColor"/>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="5dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Details"
+                            style="@style/PrimaryTextColor"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="20dp"
+                            style="@style/CardBackground">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/plant_LL_homeGardener"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingVertical="5dp"
+                                android:paddingHorizontal="15dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:text="Planting Date"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/plant_LBL_plantingDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    style="@style/DividerBackground" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:text="Watering in a week"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/plant_LBL_watering"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/PrimaryTextColor"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/plant_LL_wildDiscovery"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingVertical="5dp"
+                                android:paddingHorizontal="15dp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:text="Observation Date"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/plant_LBL_observationDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginVertical="2dp"
+                                    style="@style/DividerBackground" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:text="Location"
+                                    style="@style/PrimaryTextColor"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/plant_LBL_Location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    style="@style/PrimaryTextColor"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/plant_LL_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="5dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Notes"
+                            style="@style/PrimaryTextColor"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="20dp"
+                            style="@style/CardBackground">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/plant_EDT_notes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:paddingTop="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="10dp"
+                                style="@style/PrimaryTextColor"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+<!--                        <androidx.appcompat.widget.AppCompatEditText-->
+<!--                            android:id="@+id/plant_EDT_notes"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textAlignment="textStart"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:paddingTop="5dp"-->
+<!--                            android:paddingLeft="10dp"-->
+<!--                            android:paddingRight="10dp"-->
+<!--                            android:autoSizeTextType="uniform"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:inputType="none"-->
+<!--                            android:focusable="false"-->
+<!--                            android:focusableInTouchMode="false"-->
+<!--                            style="@style/NoUnderlineEditText"/>-->
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>
+

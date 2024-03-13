@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/ScreenBackground"
+    tools:context=".activities.AddActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/add_LL_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/add_LBL_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textSize="18sp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:textColor="@color/primary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/add_LBL_nothing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="New Plant"
+            android:textSize="25sp"
+            style="@style/PrimaryTextColor"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/add_LBL_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:textSize="18sp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:textColor="@color/primary"
+            android:enabled="false"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_LL_topBar"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/add_Scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="20dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/add_IMG_plantImage"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/noplantimagebackground"
+                        app:civ_border_color="@color/gray"
+                        app:civ_border_width="1.5dp"/>
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/add_FAB_changeProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        app:icon="@drawable/ic_photo"
+                        style="@style/PhotoFloatingButtonBackground"/>
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_LAY_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Plant Name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_EDT_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:textSize="18sp"
+                            android:maxLength="28"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/add_LAY_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Status"
+                        android:paddingBottom="15dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/add_EDT_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapSentences"
+                            android:textSize="18sp"
+                            android:maxLength="120"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/add_LBL_documentation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documentation type"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/add_RATIO_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/add_LBL_documentation"
+                        android:background="@drawable/frame"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/add_RATIO_home"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:outlineProvider="bounds"
+                            android:text="Home Garden"
+                            android:textSize="15sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            style="@style/DividerBackground" />
+
+                        <RadioButton
+                            android:id="@+id/add_RATIO_outside"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Wild Discovery"
+                            android:textSize="15sp"/>
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/add_LL_homeGarden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_LAY_plantingDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Planting date"
+                            app:startIconContentDescription="Planting date"
+                            app:startIconDrawable="@drawable/ic_calendar">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/add_EDT_plantingDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="true"
+                                android:inputType="date"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Watering in a week ?"
+                                android:textSize="17sp"
+                                android:paddingStart="12dp"/>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                style="@style/ItemDays">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/add_PICK_watering"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="none"
+                                    android:gravity="center|top"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/add_LL_outside"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_LAY_observationDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Observation date"
+                            app:startIconContentDescription="Observation date"
+                            app:startIconDrawable="@drawable/ic_calendar">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/add_EDT_observationDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="true"
+                                android:inputType="date"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/add_LAY_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Location"
+                            app:startIconContentDescription="Location"
+                            app:startIconDrawable="@drawable/ic_location">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/add_EDT_location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:textSize="18sp"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/add_LBL_counter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="20dp"
+                            android:text="0/200"
+                            android:textSize="14sp"
+                            style="@style/PrimaryTextColor" />
+
+                        <EditText
+                            android:id="@+id/add_EDT_notes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:hint="additional information..."
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:lines="5"
+                            android:maxLines="5"
+                            android:minLines="4"
+                            android:padding="10dp"
+                            android:maxLength="200"
+                            android:scrollbars="vertical"
+                            style="@style/NoUnderlineEditText"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>
