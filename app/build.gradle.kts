@@ -1,5 +1,7 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -53,4 +55,14 @@ dependencies {
     //Image
     implementation ("com.github.dhaval2404:imagepicker:2.1")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //RatingBar
+    implementation("com.github.hotchemi:android-rate:1.0.1")
+
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
+
 }

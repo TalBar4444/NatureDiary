@@ -16,8 +16,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.myapps.growdiary.MySignal;
 import com.myapps.growdiary.adapters.GalleryAdapter;
 import com.myapps.growdiary.R;
 import com.myapps.growdiary.model.Plant;
@@ -25,7 +28,6 @@ import com.myapps.growdiary.model.Plant;
 import java.util.ArrayList;
 
 public class GalleryActivity extends AppCompatActivity {
-    //private LinearLayoutCompat gallery_LL_withPhotos;
     private MaterialTextView gallery_LBL_noPhotos;
     private MaterialButton bottom_NAV_gallery,bottom_NAV_plants,bottom_NAV_settings;
     private RecyclerView gallery_LST_photos;
@@ -33,12 +35,10 @@ public class GalleryActivity extends AppCompatActivity {
     private ArrayList<String> plantImageURIs;
     private Class<?> mainClass;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-
         findViews();
         bottomNavListener();
         bottom_NAV_gallery.setIconTint(getColorStateList(R.color.primary));
@@ -51,14 +51,19 @@ public class GalleryActivity extends AppCompatActivity {
             gallery_LST_photos.setVisibility(View.GONE);
             gallery_LBL_noPhotos.setVisibility(View.VISIBLE);
         } else {
-            gallery_LBL_noPhotos.setVisibility(View.GONE);
-            gallery_LST_photos.setVisibility(View.VISIBLE);
-
             for (Plant plant : plants) { // Loop through the plants ArrayList and extract the image URIs
                 String imageURI = plant.getImage();
                 if (imageURI != null && !imageURI.isEmpty()) {
                     plantImageURIs.add(imageURI);
                 }
+            }
+            if(!plantImageURIs.isEmpty()){
+                gallery_LBL_noPhotos.setVisibility(View.GONE);
+                gallery_LST_photos.setVisibility(View.VISIBLE);
+            }
+            else{
+                gallery_LST_photos.setVisibility(View.GONE);
+                gallery_LBL_noPhotos.setVisibility(View.VISIBLE);
             }
         }
 

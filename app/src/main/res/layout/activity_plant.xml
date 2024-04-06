@@ -299,22 +299,6 @@
                                 android:paddingBottom="10dp"
                                 style="@style/PrimaryTextColor"/>
                         </com.google.android.material.card.MaterialCardView>
-
-<!--                        <androidx.appcompat.widget.AppCompatEditText-->
-<!--                            android:id="@+id/plant_EDT_notes"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:textAlignment="textStart"-->
-<!--                            android:textSize="20sp"-->
-<!--                            android:paddingTop="5dp"-->
-<!--                            android:paddingLeft="10dp"-->
-<!--                            android:paddingRight="10dp"-->
-<!--                            android:autoSizeTextType="uniform"-->
-<!--                            android:paddingBottom="10dp"-->
-<!--                            android:inputType="none"-->
-<!--                            android:focusable="false"-->
-<!--                            android:focusableInTouchMode="false"-->
-<!--                            style="@style/NoUnderlineEditText"/>-->
                     </androidx.appcompat.widget.LinearLayoutCompat>
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>

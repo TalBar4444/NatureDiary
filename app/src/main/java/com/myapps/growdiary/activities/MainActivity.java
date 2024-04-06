@@ -6,62 +6,59 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.textview.MaterialTextView;
+
+import com.myapps.growdiary.MySignal;
+import com.myapps.growdiary.MyUtils;
 import com.myapps.growdiary.adapters.PlantAdapter;
 import com.myapps.growdiary.R;
 import com.myapps.growdiary.interfaces.CallBack_List;
 import com.myapps.growdiary.interfaces.RecyclerViewInterface;
 import com.myapps.growdiary.model.MSPV;
 import com.myapps.growdiary.model.Plant;
+import com.myapps.growdiary.model.Settings;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
 
-    private Bundle bundle;
     public static final String KEY_BUNDLE = "KEY_BUNDLE";
     private ExtendedFloatingActionButton main_FAB_add;
     private RecyclerView main_LST_plants;
     private MaterialButton bottom_NAV_gallery,bottom_NAV_plants,bottom_NAV_settings;
-    private AppBarLayout main_APPBAR_main;
-    private CollapsingToolbarLayout main_APPBAR_toolbar;
-    private MaterialTextView main_LBL_title;
+    private AdView adView_AD_banner;
     private ArrayList<Plant> plants;
-
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
-        bundle = getIntent().getBundleExtra(PlantActivity.KEY_BUNDLE);
         setContentView(R.layout.activity_main);
-
         findViews();
         initList();
+        checkUserProgram();
         bottomNavListener();
         bottom_NAV_plants.setIconTint(getColorStateList(R.color.primary));
         bottom_NAV_plants.setTextColor(getColorStateList(R.color.primary));
 
-        main_FAB_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, AddActivity.class);
-            }
-        });
+        MyUtils.rateAppPopup(MainActivity.this); //rating dialog will pop up a few days after the user launched the app
+        if (!MyUtils.isInternetConnected(this)) {
+            MyUtils.noInternetPopup(MainActivity.this);
+        }
+        main_FAB_add.setOnClickListener(view -> redirectActivity(MainActivity.this, AddActivity.class));
     }
+
     private void findViews() {
         bottom_NAV_gallery=findViewById(R.id.bottom_NAV_gallery);
         bottom_NAV_plants=findViewById(R.id.bottom_NAV_plants);
         bottom_NAV_settings=findViewById(R.id.bottom_NAV_settings);
         main_LST_plants = findViewById(R.id.main_LST_plants);
         main_FAB_add = findViewById(R.id.main_FAB_add);
+        adView_AD_banner = findViewById(R.id.adView_AD_banner);
     }
 
     private void initList() {
@@ -72,6 +69,15 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         main_LST_plants.setHasFixedSize(true);
         main_LST_plants.setAdapter(plantAdapter);
     }
+
+    private void checkUserProgram() {
+        if (Settings.getType() == Settings.UserType.REGULAR && Settings.getAdsMode() == Settings.AdsMode.ADS_ON) { // REGULAR + ads = Yes Banner
+            adView_AD_banner.setVisibility(View.VISIBLE);
+            MySignal.getInstance().loadBanner(getWindowManager().getDefaultDisplay(), adView_AD_banner);
+        } else
+            adView_AD_banner.setVisibility(View.GONE);
+    }
+
     private CallBack_List callBackList = new CallBack_List() {
         @Override
         public void plantSave(Plant plant) {
@@ -90,12 +96,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 redirectActivity(MainActivity.this, GalleryActivity.class);
             }
         });
-        bottom_NAV_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, SettingsActivity.class);
-            }
-        });
+        bottom_NAV_settings.setOnClickListener(view -> redirectActivity(MainActivity.this, SettingsActivity.class));
     }
     public void redirectActivity(Activity activity, Class secondActivity){
         Intent intent = new Intent(activity,secondActivity);

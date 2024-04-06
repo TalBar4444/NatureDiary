@@ -33,7 +33,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.myapps.growdiary.MySignal;
+import com.myapps.growdiary.MyUtils;
 import com.myapps.growdiary.R;
 import com.myapps.growdiary.model.MSPV;
 import com.myapps.growdiary.model.Plant;
@@ -71,20 +73,13 @@ public class EditActivity extends AppCompatActivity {
     private Uri imageUri;
     private Plant receivedPlant;
     private PlantHub plantHub;
-
-    public EditActivity(){
-        // Required empty public constructor
-    }
-
-    public interface editFragmentListener {
-        public void onSaveClicked(ArrayList<Plant> plantList);
-    }
-
+    private FirebaseAnalytics mFirebaseAnalytics;
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_edit);
         receivedPlant = (Plant) getIntent().getSerializableExtra("KEY_PLANT");
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         findViews();
         getData();
         checkEnable();
@@ -100,6 +95,7 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 editPlant();
+                MyUtils.rateAppPopup(EditActivity.this); //rating app popUp after the user successfully edit a plant
                 backToPlantActivity();
             }
         });
@@ -361,6 +357,16 @@ public class EditActivity extends AppCompatActivity {
         allPlants.add(0, plant);
         MSPV.getMe().saveThirtyPlants(plants.setPlants(allPlants));
         MySignal.getInstance().toast(plant.getTitle() + " has been updated");
+        firebasePlantEvent(plant.getTitle());
+    }
+
+    private void firebasePlantEvent(String plantTitle) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "buttonClicked");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Edit button Clicked");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Edited plant");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT, plantTitle);
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
     private void backToPlantActivity(){

@@ -2,6 +2,7 @@ package com.myapps.growdiary.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -16,6 +17,8 @@ public class MSPV {
     private String THIRTY = "THIRTY";
     private String COUNTER = "COUNTER";
     private String MODE = "MODE";
+    private String TYPE = "TYPE";
+    private String ADS = "ADS";
 
     private static int counter;
     //private boolean nightMode;
@@ -92,6 +95,30 @@ public class MSPV {
     public Boolean readDisplayMode(){
         Boolean nightMode = prefs.getBoolean("SP_MODE",false);
         return nightMode;
+    }
+
+    public void saveUserType(Settings.UserType userType){
+        SharedPreferences.Editor editor = prefs.edit();
+        String json = new Gson().toJson(userType);
+        this.getMe().saveString(TYPE,json);
+        editor.apply();
+    }
+
+    public Settings.UserType readUserType(){
+        String json = this.getMe().readString(TYPE, Settings.UserType.REGULAR.toString());
+        return new Gson().fromJson(json, Settings.UserType.class);
+    }
+
+    public void saveAdsMode(Settings.AdsMode adsMode) {
+        SharedPreferences.Editor editor = prefs.edit();
+        String json = new Gson().toJson(adsMode);
+        this.getMe().saveString(ADS,json);
+        editor.apply();
+    }
+
+    public Settings.AdsMode readAdsMode(){
+        String json = this.getMe().readString(ADS, Settings.AdsMode.ADS_ON.toString());
+        return new Gson().fromJson(json, Settings.AdsMode.class);
     }
 }
 

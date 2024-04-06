@@ -25,7 +25,7 @@
             style="@style/ToolbarBackground">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/main_LBL_title"
+                android:id="@+id/gallery_LBL_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

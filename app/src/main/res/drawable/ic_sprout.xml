@@ -2,8 +2,7 @@
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="512"
-    android:viewportHeight="512"
-    android:tint="@color/white">
+    android:viewportHeight="512">
     <group
         android:translateX="0"
         android:translateY="0">

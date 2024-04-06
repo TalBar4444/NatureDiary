@@ -134,12 +134,30 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/add_LBL_documentation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Documentation type"
-                        android:textSize="15sp" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="2dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/add_LBL_documentation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Documentation type"
+                            android:textSize="15sp"
+                            android:layout_gravity="bottom"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/add_IMG_pro"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_pro"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="60dp"
+                            style="@style/ProStyle"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <RadioGroup
                         android:id="@+id/add_RATIO_group"
@@ -171,6 +189,7 @@
                             android:layout_weight="1"
                             android:text="Wild Discovery"
                             android:textSize="15sp"/>
+
                     </RadioGroup>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -293,6 +312,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="top"
+                            android:layout_marginBottom="50dp"
                             android:hint="additional information..."
                             android:inputType="textMultiLine|textCapSentences"
                             android:lines="5"
