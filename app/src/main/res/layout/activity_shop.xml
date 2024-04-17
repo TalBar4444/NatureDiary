@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/ScreenBackground">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/shop_LL_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/ToolbarBackground">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shop_LBL_back"
+            style="@style/ToolbarTextAndIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_back"
+            android:gravity="start"
+            android:paddingVertical="18dp"
+            android:paddingStart="20dp"
+            android:text=" Back"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shop_LL_topBar"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_pro_painted"
+            android:text=" Get the Premium version"
+            android:textSize="25sp"
+            style="@style/PrimaryTextColor"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CardBackground">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingVertical="5dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pro Subscription"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        style="@style/PrimaryTextColor"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_binoculars"
+                        android:text=" Wild Discovery feature available"
+                        android:minLines="1"
+                        android:maxLines="1"
+                        android:textSize="20sp"
+                        android:layout_marginStart="-3dp"
+                        style="@style/SettingsTextAndIcon"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_sprout"
+                        android:text="  Unlimited plants"
+                        android:textSize="20sp"
+                        style="@style/SettingsTextAndIcon"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_no_ads"
+                        android:text="  Ad-free experience"
+                        android:textSize="20sp"
+                        style="@style/SettingsTextAndIcon"/>
+
+                    <View
+                        style="@style/DividerBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₪7.90 - per month"
+                        android:textSize="20sp"
+                        style="@style/PrimaryTextColor"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/shop_BTN_pro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        style="@style/ButtonStyle"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="30dp"
+            android:layout_gravity="center">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingVertical="5dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Ads"
+                        android:textSize="23sp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        style="@style/PrimaryTextColor"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_no_ads"
+                        android:text="  Ad-free experience"
+                        android:textSize="20sp"
+                        style="@style/SettingsTextAndIcon"/>
+
+                    <View
+                        style="@style/DividerBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₪2.90 - per month"
+                        android:textSize="20sp"
+                        style="@style/PrimaryTextColor"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/shop_BTN_ads"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        style="@style/ButtonStyle"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

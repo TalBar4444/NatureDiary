@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077214266795",
+    "project_id": "natures-diary",
+    "storage_bucket": "natures-diary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077214266795:android:e593aa6ae6ff5d77543eee",
+        "android_client_info": {
+          "package_name": "com.myapps.growdiary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcPOR4w46mezUWjAz2S_MAVtdmCBQlOlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

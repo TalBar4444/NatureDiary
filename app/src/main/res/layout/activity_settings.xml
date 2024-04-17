@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ScreenBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        style="@style/ScreenBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            app:expandedTitleMarginEnd="16dp"
+            app:expandedTitleMarginStart="16dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleCollapseMode="scale"
+            style="@style/ToolbarBackground">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/settings_LBL_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Settings"
+                android:textSize="32sp"
+                app:layout_collapseMode="pin"
+                app:titleEnabled="true"
+                style="@style/PrimaryTitleColor"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="20dp"
+            app:cardCornerRadius="10dp"
+            style="@style/CardBackground">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/settings_LBL_goPro"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|start"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:textSize="19sp"
+                        android:text="   Get the Premium Version"
+                        android:drawableStart="@drawable/ic_pro_painted"
+                        style="@style/PrimaryTitleColor"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:layout_marginStart="15dp"
+                        android:textSize="18sp"
+                        android:text="   Display Mode"
+                        android:drawableStart="@drawable/ic_display_mode"
+                        style="@style/SettingsTextAndIcon"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/settings_SWCH_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="end|center"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_LBL_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:text="   Share Us"
+                    android:drawableStart="@drawable/ic_share"
+                    style="@style/SettingsTextAndIcon"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_LBL_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:text="   Rate Us"
+                    android:drawableStart="@drawable/ic_rating"
+                    style="@style/SettingsTextAndIcon"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_LBL_newVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:text="    Coming Soon"
+                    android:drawableStart="@drawable/ic_new_version"
+                    style="@style/SettingsTextAndIcon"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_LBL_aboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:text="   About Us"
+                    android:drawableStart="@drawable/ic_info"
+                    style="@style/SettingsTextAndIcon"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/DividerBackground" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/settings_LBL_privacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="start|center"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp"
+                    android:text="   Privacy Policy"
+                    android:drawableStart="@drawable/ic_privacy"
+                    style="@style/SettingsTextAndIcon"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        layout="@layout/bottom_nav" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
