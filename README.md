@@ -1,4 +1,4 @@
-# 🌿 NatureDiary
+# NatureDiary
 
 **NatureDiary** is a personal nature journaling app developed in **Java** using **Android Studio**. 
 The app allows users to capture and record their nature experiences with photos, notes, and location data.
