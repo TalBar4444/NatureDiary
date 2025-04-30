@@ -5,20 +5,20 @@ The app allows users to capture record and edit their nature experiences with ph
 
 ## 📸 Screenshots
 
-<p align="center">
-   <img src="screenshots/main.png" alt="main" width="300" style="border: 10px solid #8c8c8c;"/>
+<p align="start">
+   <img src="screenshots/main.png" alt="main" width="300" style="border: 5px dashed red;"/>
 </p>  
 
 <p align="start">
-   <img src="screenshots/newPlant.png" alt="Add new plant Activity" width="300" style="border: 10px solid #8c8c8c;" />
+   <img src="screenshots/newPlant.png" alt="Add new plant Activity" width="300" style="border: 5px dashed red;"/>
 </p>
 
 <p align="start">
-   <img src="screenshots/gallery.png" alt="Gallery" width="300" style="border: 10px solid #8c8c8c;" />
+   <img src="screenshots/gallery.png" alt="Gallery" width="300" style="border: 5px dashed red;"/>
 </p>
 
 <p align="start">
-   <img src="screenshots/darkMode.png" alt="Dark Mode" width="300" style="border:10px solid #8c8c8c;" />
+   <img src="screenshots/darkMode.png" alt="Dark Mode" width="300" style="border: 5px dashed red;"/>
 </p>
 
 ## ✨ Features
