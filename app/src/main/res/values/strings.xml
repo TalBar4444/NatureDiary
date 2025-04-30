@@ -6,4 +6,5 @@
     <string name="rate_dialog_neutral">Remind Me Later</string>
     <string name="rate_dialog_cancel">No, Thanks</string>
     <string name="pro_content">"This content is exclusive for subscribers!"</string>
+    <string name="subscribers_icon">Subscribers Icon</string>
 </resources>
