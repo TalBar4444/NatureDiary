@@ -5,7 +5,7 @@ The app allows users to capture record and edit their nature experiences with ph
 
 ## 📸 Screenshots
 
-<p align="start">
+<p align="center">
    <img src="screenshots/main.png" alt="main" width="300" style="box-shadow: 0px 1px 10px rgba(0,0,0,0.15); border-radius: 8px;"/>
 </p>  
 
