@@ -5,11 +5,21 @@ The app allows users to capture record and edit their nature experiences with ph
 
 ## 📸 Screenshots
 
-![Home Screen](screenshots/main.png)
-![Add new plant Activity](screenshots/newPlant.png)
-![Gallery](screenshots/gallery.png)
-![Dark Mode](screenshots/darkMode.png)
+<p align="center">
+   <img src="screenshots/main.png" alt="main" width="300"/>
+</p>  
 
+<p align="center">
+   <img src="screenshots/newPlant.png" alt="Add new plant Activity" width="300"/>
+</p>
+
+<p align="center">
+   <img src="screenshots/Gallery.png" alt="Gallery" width="300"/>
+</p>
+
+<p align="center">
+   <img src="screenshots/darkMode.png" alt="darkMode" width="300"/>
+</p>
 
 ## ✨ Features
 
@@ -26,8 +36,8 @@ To run this project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/NatureDiary.git
-   cd NatureDiary
+   git clone https://github.com/TalBar4444/NatureDiary.git
+   
 
 ## Credits
 Icon made by Flat Icons (www.flat-icons.com) from www.flaticon.com
