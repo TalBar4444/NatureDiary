@@ -14,7 +14,7 @@ The app allows users to capture record and edit their nature experiences with ph
 </p>
 
 <p align="start">
-   <img src="screenshots/gallery.png" alt="Gallery" width="300" style="border:1px solid #8c8c8c;"/>
+   <img src="screenshots/gallery.png" alt="Gallery" width="300" style="box-shadow: 0px 0px 10px rgba(0,0,0,0.15); border-radius: 8px;" />
 </p>
 
 <p align="start">
